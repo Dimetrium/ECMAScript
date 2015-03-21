@@ -33,9 +33,9 @@ function getData() {
                     localStorage.clear();
                 }
                 putToLocalStore();
-            });
+            });        
+
         });
-        this.drawTable();
     };
     // Get Object from LocalStore
     this.getObjFromLocalStore = function () {
@@ -46,12 +46,17 @@ function getData() {
             archive[i] = JSON.parse(localStorage.getItem(key));
         }
     };
-    // Draw Table ftom localStorage
+    // Draw Table from localStorage
     this.drawTable = function () {
         this.getObjFromLocalStore();
         var dynamicColumns,
             dynamicRows,
-            localStorCurrKey = localStorage.key(0).replace(/\:.*/, '');
+            localStorCurrKey;
+        if (null !== localStorage.key(0)) {
+            localStorCurrKey = localStorage.key(0).replace(/\:.*/, '')
+        } else {
+            return false;
+        }
         // Get dynamic Columns and Rows
         if (0 == localStorCurrKey) {
             // Get Column Header

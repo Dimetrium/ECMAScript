@@ -7,6 +7,6 @@ $(document).ready(function () {
         var category = $('#category').val();
 
         jsData.setToLocalStorage(id, category);
-//        jsData.drawTable();
+        jsData.drawTable();
     });
 })
