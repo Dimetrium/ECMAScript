@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Get data from JSONHolder</title>
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="js/getData.js"></script>
+  <script src="js/script.js"></script>
+</head>
+
+<body>
+
+  <form action="">
+    <input type="input" id="input">
+    <select id="category">
+      <option value="posts">Posts</option>
+      <option value="comments">Comments</option>
+      <option value="albums">Albums</option>
+      <option value="photos">Photos</option>
+      <option value="users">Users</option>
+      <option value="todos">Todos</option>
+    </select>
+    <button type="button" id="button">Get</button>
+  </form>
+  <br>
+<hr>
+  <table id='table' data-role="table" data-mode="columntoggle"></table>
+</body>
+
+</html>
