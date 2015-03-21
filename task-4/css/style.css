@@ -1,0 +1,26 @@
+#blockscreen {
+  display: none;
+  transition: opacity, 1s;
+  -moz-transition: opacity, 1s;
+  -webkit-transition: opacity, 1s;
+  -ms-transition: opacity, 1s;
+  position: fixed;
+  background: rgb(0, 0, 0);
+  opacity: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+#modal-window {
+  z-index: 2;
+  display: none;
+  transition: top, 1s;
+  -moz-transition: top, 1s;
+  -webkit-transition: top, 1s;
+  -ms-transition: top, 1s;
+  position: relative;
+  top: -270px;
+}

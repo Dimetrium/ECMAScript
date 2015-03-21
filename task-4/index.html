@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ModalWindow</title>
+  <script src="js/modal.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <div id="blockscreen">
+  </div>
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" onclick="modalWindow.show()">
+    Launch demo modal
+  </button>
+  <div id="modal-window" class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Modal Title</h4>
+      </div>
+      <div class="modal-body">
+        <p>Modal Body&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="btn-close" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</body>
+
+</html>

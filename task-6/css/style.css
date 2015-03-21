@@ -1,0 +1,19 @@
+#blockscreen {
+  display: none;
+  position: fixed;
+  background: rgb(0, 0, 0);
+  opacity: 0.5;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+#modal-window {
+  z-index: 2;
+  display: none;
+  position: relative;
+  top: -270px;
+  opacity: 0;
+}
