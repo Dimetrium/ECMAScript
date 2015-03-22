@@ -2,13 +2,13 @@
 //       и вывод сообщении о том что такой пост есть.
 // TODO: Отрисовка при первом заходе. того что есть в локалсторадже
 
-function getData() {
-    var root = 'http://jsonplaceholder.typicode.com',
-        archive = {},
-        localStorCurrKey = null,
-        refresCategoryFlag = null;
+var getData = {
+    root: 'http://jsonplaceholder.typicode.com',
+        archive: {},
+        localStorCurrKey: null,
+        refresCategoryFlag: null;
     // Draw Table from localStorage
-    function drawTable() {
+    drawTable: function () {
         var dynamicColumns,
             dynamicRows;
 
@@ -49,9 +49,9 @@ function getData() {
         $("#table").append('<tbody><tr>' + dynamicRows + '</tr></tbody>');
 
 
-    };
+    },
 
-    function getObjFromLocalStore() {
+    getObjFromLocalStore: function () {
         var keys = Object.keys(localStorage),
             key;
         
@@ -70,7 +70,7 @@ function getData() {
     };
 
     // Get value from JSONplaceholder and set to LocalStorage
-    this.setToLocalStorage = function (id, category) {
+    setToLocalStorag: function (id, category) {
         $.ajax({
             url: root + '/' + category + '/' + id,
             method: 'GET'
