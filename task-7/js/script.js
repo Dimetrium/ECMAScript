@@ -1,11 +1,12 @@
 $(document).ready(function () {
 
-            //getObjFromLocalStore();
+    getData.getObjFromLocalStore();
+//    getData.drawTable();
 
     $("#button").click(function () {
         var id = $('#input').val();
         var category = $('#category').val();
-        jsData.setToLocalStorage(id, category);
+        getData.setToLocalStorage(id, category);
 //            jsData.getObjFromLocalStore();
 
     });
