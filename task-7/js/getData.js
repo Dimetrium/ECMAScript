@@ -1,10 +1,12 @@
 // TODO: Сделать проверку на наличие поста 
 //       и вывод сообщении о том что такой пост есть.
+// TODO: Отрисовка при первом заходе. того что есть в локалсторадже
 
 function getData() {
     var root = 'http://jsonplaceholder.typicode.com',
         archive = {},
-        localStorCurrKey = null;
+        localStorCurrKey = null,
+        refresCategoryFlag = null;
     // Draw Table from localStorage
     function drawTable() {
         var dynamicColumns,
@@ -28,12 +30,10 @@ function getData() {
         } else {
             // Get Column Header
             $.each(archive[0], function (key) {
-                console.log('1 else Get Column Header');
                 return dynamicColumns += "<th>" + key + "</th>";
             });
             // Get Rows
             $.each(archive, function () {
-                console.log('2 else Get Rows');
                 dynamicRows += "<tr>";
                 $.each(this, function (kay, value) {
                     dynamicRows += "<td>" + value + "</td>";
@@ -42,28 +42,29 @@ function getData() {
                 return dynamicRows;
             });
         }
-        console.log('start dr');
         // Draw Table Header
+
         $("#table").html('<thead><tr>' + dynamicColumns + '</tr></thead>');
         // Draw Table Rows
         $("#table").append('<tbody><tr>' + dynamicRows + '</tr></tbody>');
-        console.log('end dr');
+
 
     };
 
     function getObjFromLocalStore() {
         var keys = Object.keys(localStorage),
             key;
-
+        
+        if ( 1 == refresCategoryFlag ) {
+            archive = {};
+        }
         if (null !== localStorage.key(0)) {
             localStorCurrKey = localStorage.key(0).replace(/\:.*/, '');
             for (var i = 0; key = keys[i]; i++) {
                 archive[i] = JSON.parse(localStorage.getItem(key));
             }
             return drawTable();
-        } 
-        else {
-            console.log('LocalStorage is NULL');
+        } else {
             return false;
         }
     };
@@ -91,6 +92,7 @@ function getData() {
                 id = 0;
                 localStorage.clear();
             } else if (currentCategory !== category) {
+                refresCategoryFlag = 1;
                 localStorage.clear();
             } else if (0 == currentId) {
                 localStorage.clear();
