@@ -13,27 +13,29 @@
 <body>
 
     <div class="container">
-        <form action="" role="form">
-            <div class="form-group">
-                <label for="input">Enter ID:</label>
-                <input type="input" id="input" class="form-control" placeholder="Enter ID">
-            </div>
-
-            <div class="form-group">
-                <label for="category">Select Category:</label>
-                <select id="category">
-                    <option value="posts">Posts</option>
-                    <option value="comments">Comments</option>
-                    <option value="albums">Albums</option>
-                    <option value="photos">Photos</option>
-                    <option value="users">Users</option>
-                    <option value="todos">Todos</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <button type="button" id="button" class="btn btn-default">Get</button>
-            </div>
-        </form>
+        <div class="col-xs-4">
+            <form action="" role="form">
+                <div class="form-group">
+                    <label for="input">Enter ID:</label>
+                    <input type="input" id="input" class="form-control" placeholder="Enter ID">
+                </div>
+            
+                <div class="form-group">
+                    <label for="category">Select Category:</label>
+                    <select id="category" class="form-control">
+                        <option value="posts">Posts</option>
+                        <option value="comments">Comments</option>
+                        <option value="albums">Albums</option>
+                        <option value="photos">Photos</option>
+                        <option value="users">Users</option>
+                        <option value="todos">Todos</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="button" id="button" class="btn btn-default">Get</button>
+                </div>
+            </form>
+        </div>
         <div id="alert"></div>
         <hr>
         <table id='table' data-role="table" data-mode="columntoggle" class="table table-hover"></table>
