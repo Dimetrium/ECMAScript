@@ -56,7 +56,8 @@ var getData = {
         var root = this.root,
             _this = this;
         if (false == jQuery.isEmptyObject(localStorage[id + ':' + category])) {
-            return $("#alert").html('<div class="alert alert-warning" role="alert">this id: ' + id + ' in list</div>');
+            return $("#alert").html(
+                '<div class="alert alert-warning" role="alert">this id: ' + id + ' in list</div>');
         } else {
             $("#alert").html('');
         }
