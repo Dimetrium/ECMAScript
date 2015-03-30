@@ -47,6 +47,7 @@ var getData = {
             for (var i = 0; key = keys[i]; i++) {
                 this.archive[i] = JSON.parse(localStorage.getItem(key));
             }
+            return this.archive;
             getData.drawTable();
         } else {
             return false;
@@ -81,7 +82,8 @@ var getData = {
                 localStorage.clear();
             }
             localStorage[id + ':' + category] = JSON.stringify(data);
-            getData.getObjFromLocalStore();
+            if (getData.getObjFromLocalStore()){ getData.drawTable()}
+
         });
     }
 };
